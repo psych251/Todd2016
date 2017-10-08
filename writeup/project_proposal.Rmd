@@ -1,0 +1,8 @@
+---
+title: "Replication Project Proposal"
+author: "Kiara Sanchez"
+date: "10/8/2017"
+output: html_document
+---
+
+#
