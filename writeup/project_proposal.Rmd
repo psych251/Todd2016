@@ -5,4 +5,56 @@ date: "10/8/2017"
 output: html_document
 ---
 
-#
+## Original Paper
+
+Todd, A. R., Thiem, K. C., & Neel, R. N. (2016). Does Seeing Faces of Young Black Boys Facilitate the Identification of Threatening Stimuli? Psychological Science, 27(273), 384–393. https://doi.org/10.1177/0956797615624492
+
+
+##Project Justification 
+
+Implicit bias and social cognition research demonstrates strong cognitive biases linking Black men to threat, crime, and violence (Correll, et al., 2002; Trawalter et al., 2008; Amodio, 2014; Eberhardt et al., 2004). Through object categorization tasks, the current paper found that these stereotypes extend to Black boys. This research is closely aligned with my interest in interracial processes, stereotypes, and interventions to improve interracial relations. Although I have not conducted implicit bias research before, I am particularly interested in pursuing this study as an opportunity to gain the skills I will need as I begin to start thinking about developing new reaction time studies in my own line of research. This paper presents a direct opportunity to learn how to design a reaction time task using Java Script, a skill that I will use in my research examining biases in interracial relationships, communication, and self-disclosure. I have chosen to replicate Experiment 1 because it is the simplest in design and I believe that it will present a challenge appropriate for the scope of this class. 
+
+
+##Stimuli and Procedures 
+
+Experiment 1 is a 2 (race of face prime: Black, White) X 2 (target object: toy, gun) design. White participants on MTurk will complete a weapon identification task in which two images (face prime first, target object second) flash on the monitor in quick succession. Participants will be asked to quickly identify whether the target object was a toy or a gun using one of two response keys. Dependent variables include reaction time (RT), error rate, and process-dissociation procedure (PDP) estimate. A 2X2 repeated measures ANOVA test will be conducted for each dependent variable. 
+
+####Primes
+
+* Twelve photos of boys (6 Black, 6 White) from the Child Affective Facial Expression set (LoBue & Thrasher, 2015)
+    + mean age: ~ 5 years 
+    + neutral facial expression 
+    + no idiosyncracies 
+    + able to be easily categorized by race 
+  
+####Target Objects
+
+* Six gun images (Payne, 2001) and six toy images (originally taken from online sources)
+    + gray scale
+    + matched size
+
+####Procedure 
+
+1. Eight practice trials 
+2. 144 randomly ordered experimental trials
+    + Each of the 12 face primes paired once with each of the 12 target objects
+3. Photo ratings for each face
+    + age 
+    + race 
+    + "How threatening does this face seem?"
+
+#####Procedure for each trial 
+1. Blank screen: 500 ms 
+2. Face prime: 200 ms 
+3. Target object: 200 ms 
+4. Pattern mask: until participant responds 
+    + If no response within 500ms: "Please response faster!" (1s)
+
+
+##Challenges 
+
+I foresee this project as posing moderate to considerable challenge, considering I have no experience coding in Java Script. I have consulted with Ian about this, and I have completed the JSPsych tutorial, so I believe that I am aware of the scope of my proposed project. I will continue to be resourceful throughout the process by utilizing many online resources and consulting with labmates who have experience coding the exact kind of reaction time task involved in the original paper. I will also consult with the TAs as often as needed. 
+
+
+
+
