@@ -378,7 +378,7 @@ var demographics = {
         ReligiousAffiliation: religiousAffiliation,
         ReligiousAttendance: religiousAttendance,
         Education: education,
-        Citizen: citizen,s
+        Citizen: citizen,
         Political: political,
         Comments: comments
       };

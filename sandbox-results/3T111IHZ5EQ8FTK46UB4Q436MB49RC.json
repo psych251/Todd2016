@@ -1,0 +1,1478 @@
+{
+    "AutoApprovalTime": "2017-11-24T22:34:29Z",
+    "AssignmentId": "3T111IHZ5EQ8FTK46UB4Q436MB49RC",
+    "WorkerId": "A3SWICZ0WRFYEM",
+    "answers": {
+        "practice_order": [],
+        "trial_order": [],
+        "demographicsData": [
+            {
+                "ReligiousAffiliation": "none",
+                "ReligiousAttendance": "1",
+                "SES": "4",
+                "Age": "22",
+                "Political": "7",
+                "Comments": "Nope! ",
+                "Education": "4",
+                "Citizen": "1",
+                "Male": "0",
+                "Ethnicity": "2"
+            }
+        ],
+        "toolType": "c",
+        "faceType": 118,
+        "toolInput": "criminal",
+        "faceInput": "b04",
+        "keyBindings": {
+            "q": "threatening",
+            "p": "safe"
+        },
+        "data": [
+            {
+                "rt": 300,
+                "raceStim": "w03",
+                "tool": "h",
+                "race": 25,
+                "toolStim": "harmless",
+                "trial_num": 1,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 85,
+                "raceStim": "w01",
+                "tool": "v",
+                "race": 6,
+                "toolStim": "violent",
+                "trial_num": 2,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 358,
+                "raceStim": "b06",
+                "tool": "t",
+                "race": 135,
+                "toolStim": "trustworthy",
+                "trial_num": 3,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 678,
+                "raceStim": "w03",
+                "tool": "s",
+                "race": 29,
+                "toolStim": "safe",
+                "trial_num": 4,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 163,
+                "raceStim": "w06",
+                "tool": "p",
+                "race": 64,
+                "toolStim": "peaceful",
+                "trial_num": 5,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 0,
+                "raceStim": "b01",
+                "tool": "a",
+                "race": 81,
+                "toolStim": "aggressive",
+                "trial_num": 6,
+                "responded": 0,
+                "accuracy": 0
+            },
+            {
+                "rt": 232,
+                "raceStim": "w04",
+                "tool": "h",
+                "race": 37,
+                "toolStim": "harmless",
+                "trial_num": 7,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 157,
+                "raceStim": "b03",
+                "tool": "f",
+                "race": 98,
+                "toolStim": "friendly",
+                "trial_num": 8,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 248,
+                "raceStim": "b05",
+                "tool": "h",
+                "race": 128,
+                "toolStim": "hostile",
+                "trial_num": 9,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 326,
+                "raceStim": "w06",
+                "tool": "t",
+                "race": 63,
+                "toolStim": "trustworthy",
+                "trial_num": 10,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 648,
+                "raceStim": "w01",
+                "tool": "p",
+                "race": 4,
+                "toolStim": "peaceful",
+                "trial_num": 11,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 299,
+                "raceStim": "b05",
+                "tool": "a",
+                "race": 129,
+                "toolStim": "aggressive",
+                "trial_num": 12,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 375,
+                "raceStim": "w02",
+                "tool": "h",
+                "race": 20,
+                "toolStim": "hostile",
+                "trial_num": 13,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 62,
+                "raceStim": "w05",
+                "tool": "c",
+                "race": 58,
+                "toolStim": "criminal",
+                "trial_num": 14,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 0,
+                "raceStim": "b06",
+                "tool": "t",
+                "race": 143,
+                "toolStim": "threatening",
+                "trial_num": 15,
+                "responded": 0,
+                "accuracy": 0
+            },
+            {
+                "rt": 292,
+                "raceStim": "w06",
+                "tool": "a",
+                "race": 69,
+                "toolStim": "aggressive",
+                "trial_num": 16,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 344,
+                "raceStim": "b05",
+                "tool": "t",
+                "race": 123,
+                "toolStim": "trustworthy",
+                "trial_num": 17,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 363,
+                "raceStim": "b01",
+                "tool": "i",
+                "race": 72,
+                "toolStim": "innocent",
+                "trial_num": 18,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 147,
+                "raceStim": "b01",
+                "tool": "d",
+                "race": 79,
+                "toolStim": "dangerous",
+                "trial_num": 19,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 390,
+                "raceStim": "b02",
+                "tool": "f",
+                "race": 86,
+                "toolStim": "friendly",
+                "trial_num": 20,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 200,
+                "raceStim": "w01",
+                "tool": "f",
+                "race": 2,
+                "toolStim": "friendly",
+                "trial_num": 21,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 238,
+                "raceStim": "b04",
+                "tool": "h",
+                "race": 116,
+                "toolStim": "hostile",
+                "trial_num": 22,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 0,
+                "raceStim": "b02",
+                "tool": "s",
+                "race": 89,
+                "toolStim": "safe",
+                "trial_num": 23,
+                "responded": 0,
+                "accuracy": 0
+            },
+            {
+                "rt": 0,
+                "raceStim": "w04",
+                "tool": "p",
+                "race": 40,
+                "toolStim": "peaceful",
+                "trial_num": 24,
+                "responded": 0,
+                "accuracy": 0
+            },
+            {
+                "rt": 278,
+                "raceStim": "b02",
+                "tool": "c",
+                "race": 94,
+                "toolStim": "criminal",
+                "trial_num": 25,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 345,
+                "raceStim": "w06",
+                "tool": "h",
+                "race": 61,
+                "toolStim": "harmless",
+                "trial_num": 26,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 586,
+                "raceStim": "w01",
+                "tool": "t",
+                "race": 3,
+                "toolStim": "trustworthy",
+                "trial_num": 27,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 689,
+                "raceStim": "w06",
+                "tool": "s",
+                "race": 65,
+                "toolStim": "safe",
+                "trial_num": 28,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 255,
+                "raceStim": "w06",
+                "tool": "h",
+                "race": 68,
+                "toolStim": "hostile",
+                "trial_num": 29,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 241,
+                "raceStim": "b01",
+                "tool": "h",
+                "race": 73,
+                "toolStim": "harmless",
+                "trial_num": 30,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 217,
+                "raceStim": "b02",
+                "tool": "h",
+                "race": 85,
+                "toolStim": "harmless",
+                "trial_num": 31,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 299,
+                "raceStim": "b02",
+                "tool": "h",
+                "race": 92,
+                "toolStim": "hostile",
+                "trial_num": 32,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 156,
+                "raceStim": "w01",
+                "tool": "d",
+                "race": 7,
+                "toolStim": "dangerous",
+                "trial_num": 33,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 117,
+                "raceStim": "b05",
+                "tool": "s",
+                "race": 125,
+                "toolStim": "safe",
+                "trial_num": 34,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 74,
+                "raceStim": "b04",
+                "tool": "i",
+                "race": 108,
+                "toolStim": "innocent",
+                "trial_num": 35,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 227,
+                "raceStim": "b01",
+                "tool": "t",
+                "race": 75,
+                "toolStim": "trustworthy",
+                "trial_num": 36,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 359,
+                "raceStim": "b01",
+                "tool": "f",
+                "race": 74,
+                "toolStim": "friendly",
+                "trial_num": 37,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 199,
+                "raceStim": "w02",
+                "tool": "f",
+                "race": 14,
+                "toolStim": "friendly",
+                "trial_num": 38,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 0,
+                "raceStim": "b04",
+                "tool": "a",
+                "race": 117,
+                "toolStim": "aggressive",
+                "trial_num": 39,
+                "responded": 0,
+                "accuracy": 0
+            },
+            {
+                "rt": 570,
+                "raceStim": "b05",
+                "tool": "t",
+                "race": 131,
+                "toolStim": "threatening",
+                "trial_num": 40,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 585,
+                "raceStim": "w02",
+                "tool": "a",
+                "race": 21,
+                "toolStim": "aggressive",
+                "trial_num": 41,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 620,
+                "raceStim": "w05",
+                "tool": "f",
+                "race": 50,
+                "toolStim": "friendly",
+                "trial_num": 42,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 188,
+                "raceStim": "b06",
+                "tool": "a",
+                "race": 141,
+                "toolStim": "aggressive",
+                "trial_num": 43,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 324,
+                "raceStim": "b02",
+                "tool": "t",
+                "race": 95,
+                "toolStim": "threatening",
+                "trial_num": 44,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 140,
+                "raceStim": "w03",
+                "tool": "h",
+                "race": 32,
+                "toolStim": "hostile",
+                "trial_num": 45,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 301,
+                "raceStim": "b03",
+                "tool": "h",
+                "race": 97,
+                "toolStim": "harmless",
+                "trial_num": 46,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 299,
+                "raceStim": "b05",
+                "tool": "i",
+                "race": 120,
+                "toolStim": "innocent",
+                "trial_num": 47,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 252,
+                "raceStim": "b05",
+                "tool": "p",
+                "race": 124,
+                "toolStim": "peaceful",
+                "trial_num": 48,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 248,
+                "raceStim": "b04",
+                "tool": "t",
+                "race": 119,
+                "toolStim": "threatening",
+                "trial_num": 49,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 281,
+                "raceStim": "w06",
+                "tool": "i",
+                "race": 60,
+                "toolStim": "innocent",
+                "trial_num": 50,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 136,
+                "raceStim": "b04",
+                "tool": "h",
+                "race": 109,
+                "toolStim": "harmless",
+                "trial_num": 51,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 322,
+                "raceStim": "w04",
+                "tool": "i",
+                "race": 36,
+                "toolStim": "innocent",
+                "trial_num": 52,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 453,
+                "raceStim": "b06",
+                "tool": "s",
+                "race": 137,
+                "toolStim": "safe",
+                "trial_num": 53,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 216,
+                "raceStim": "w06",
+                "tool": "t",
+                "race": 71,
+                "toolStim": "threatening",
+                "trial_num": 54,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 333,
+                "raceStim": "w03",
+                "tool": "d",
+                "race": 31,
+                "toolStim": "dangerous",
+                "trial_num": 55,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 408,
+                "raceStim": "w01",
+                "tool": "h",
+                "race": 1,
+                "toolStim": "harmless",
+                "trial_num": 56,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 336,
+                "raceStim": "w05",
+                "tool": "d",
+                "race": 55,
+                "toolStim": "dangerous",
+                "trial_num": 57,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 334,
+                "raceStim": "b02",
+                "tool": "i",
+                "race": 84,
+                "toolStim": "innocent",
+                "trial_num": 58,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 687,
+                "raceStim": "b06",
+                "tool": "i",
+                "race": 132,
+                "toolStim": "innocent",
+                "trial_num": 59,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 255,
+                "raceStim": "w01",
+                "tool": "a",
+                "race": 9,
+                "toolStim": "aggressive",
+                "trial_num": 60,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 134,
+                "raceStim": "b01",
+                "tool": "c",
+                "race": 82,
+                "toolStim": "criminal",
+                "trial_num": 61,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 270,
+                "raceStim": "b01",
+                "tool": "h",
+                "race": 80,
+                "toolStim": "hostile",
+                "trial_num": 62,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 284,
+                "raceStim": "w02",
+                "tool": "t",
+                "race": 23,
+                "toolStim": "threatening",
+                "trial_num": 63,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 154,
+                "raceStim": "w04",
+                "tool": "s",
+                "race": 41,
+                "toolStim": "safe",
+                "trial_num": 64,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 353,
+                "raceStim": "b03",
+                "tool": "p",
+                "race": 100,
+                "toolStim": "peaceful",
+                "trial_num": 65,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 257,
+                "raceStim": "b02",
+                "tool": "d",
+                "race": 91,
+                "toolStim": "dangerous",
+                "trial_num": 66,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 262,
+                "raceStim": "w03",
+                "tool": "t",
+                "race": 27,
+                "toolStim": "trustworthy",
+                "trial_num": 67,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 213,
+                "raceStim": "b06",
+                "tool": "c",
+                "race": 142,
+                "toolStim": "criminal",
+                "trial_num": 68,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 254,
+                "raceStim": "b04",
+                "tool": "s",
+                "race": 113,
+                "toolStim": "safe",
+                "trial_num": 69,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 123,
+                "raceStim": "w01",
+                "tool": "i",
+                "race": 0,
+                "toolStim": "innocent",
+                "trial_num": 70,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 296,
+                "raceStim": "b01",
+                "tool": "s",
+                "race": 77,
+                "toolStim": "safe",
+                "trial_num": 71,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 423,
+                "raceStim": "b01",
+                "tool": "v",
+                "race": 78,
+                "toolStim": "violent",
+                "trial_num": 72,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 416,
+                "raceStim": "w01",
+                "tool": "c",
+                "race": 10,
+                "toolStim": "criminal",
+                "trial_num": 73,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 373,
+                "raceStim": "b05",
+                "tool": "d",
+                "race": 127,
+                "toolStim": "dangerous",
+                "trial_num": 74,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 292,
+                "raceStim": "b05",
+                "tool": "v",
+                "race": 126,
+                "toolStim": "violent",
+                "trial_num": 75,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 292,
+                "raceStim": "w03",
+                "tool": "i",
+                "race": 24,
+                "toolStim": "innocent",
+                "trial_num": 76,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 226,
+                "raceStim": "b04",
+                "tool": "f",
+                "race": 110,
+                "toolStim": "friendly",
+                "trial_num": 77,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 186,
+                "raceStim": "b03",
+                "tool": "a",
+                "race": 105,
+                "toolStim": "aggressive",
+                "trial_num": 78,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 600,
+                "raceStim": "w01",
+                "tool": "t",
+                "race": 11,
+                "toolStim": "threatening",
+                "trial_num": 79,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 484,
+                "raceStim": "b04",
+                "tool": "t",
+                "race": 111,
+                "toolStim": "trustworthy",
+                "trial_num": 80,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 129,
+                "raceStim": "w03",
+                "tool": "p",
+                "race": 28,
+                "toolStim": "peaceful",
+                "trial_num": 81,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 407,
+                "raceStim": "b05",
+                "tool": "h",
+                "race": 121,
+                "toolStim": "harmless",
+                "trial_num": 82,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 343,
+                "raceStim": "w03",
+                "tool": "c",
+                "race": 34,
+                "toolStim": "criminal",
+                "trial_num": 83,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 329,
+                "raceStim": "w05",
+                "tool": "s",
+                "race": 53,
+                "toolStim": "safe",
+                "trial_num": 84,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 163,
+                "raceStim": "b06",
+                "tool": "h",
+                "race": 133,
+                "toolStim": "harmless",
+                "trial_num": 85,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 331,
+                "raceStim": "b01",
+                "tool": "p",
+                "race": 76,
+                "toolStim": "peaceful",
+                "trial_num": 86,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 286,
+                "raceStim": "w03",
+                "tool": "v",
+                "race": 30,
+                "toolStim": "violent",
+                "trial_num": 87,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 249,
+                "raceStim": "w04",
+                "tool": "t",
+                "race": 39,
+                "toolStim": "trustworthy",
+                "trial_num": 88,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 275,
+                "raceStim": "w02",
+                "tool": "i",
+                "race": 12,
+                "toolStim": "innocent",
+                "trial_num": 89,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 236,
+                "raceStim": "w05",
+                "tool": "p",
+                "race": 52,
+                "toolStim": "peaceful",
+                "trial_num": 90,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 295,
+                "raceStim": "b03",
+                "tool": "v",
+                "race": 102,
+                "toolStim": "violent",
+                "trial_num": 91,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 364,
+                "raceStim": "b04",
+                "tool": "p",
+                "race": 112,
+                "toolStim": "peaceful",
+                "trial_num": 92,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 239,
+                "raceStim": "w05",
+                "tool": "v",
+                "race": 54,
+                "toolStim": "violent",
+                "trial_num": 93,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 142,
+                "raceStim": "b03",
+                "tool": "c",
+                "race": 106,
+                "toolStim": "criminal",
+                "trial_num": 94,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 462,
+                "raceStim": "w04",
+                "tool": "d",
+                "race": 43,
+                "toolStim": "dangerous",
+                "trial_num": 95,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 408,
+                "raceStim": "b03",
+                "tool": "i",
+                "race": 96,
+                "toolStim": "innocent",
+                "trial_num": 96,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 659,
+                "raceStim": "w03",
+                "tool": "f",
+                "race": 26,
+                "toolStim": "friendly",
+                "trial_num": 97,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 192,
+                "raceStim": "w03",
+                "tool": "a",
+                "race": 33,
+                "toolStim": "aggressive",
+                "trial_num": 98,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 310,
+                "raceStim": "b06",
+                "tool": "v",
+                "race": 138,
+                "toolStim": "violent",
+                "trial_num": 99,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 350,
+                "raceStim": "b03",
+                "tool": "t",
+                "race": 99,
+                "toolStim": "trustworthy",
+                "trial_num": 100,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 279,
+                "raceStim": "b06",
+                "tool": "p",
+                "race": 136,
+                "toolStim": "peaceful",
+                "trial_num": 101,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 348,
+                "raceStim": "w06",
+                "tool": "d",
+                "race": 67,
+                "toolStim": "dangerous",
+                "trial_num": 102,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 438,
+                "raceStim": "w06",
+                "tool": "f",
+                "race": 62,
+                "toolStim": "friendly",
+                "trial_num": 103,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 210,
+                "raceStim": "b03",
+                "tool": "d",
+                "race": 103,
+                "toolStim": "dangerous",
+                "trial_num": 104,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 244,
+                "raceStim": "w02",
+                "tool": "d",
+                "race": 19,
+                "toolStim": "dangerous",
+                "trial_num": 105,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 282,
+                "raceStim": "b02",
+                "tool": "a",
+                "race": 93,
+                "toolStim": "aggressive",
+                "trial_num": 106,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 260,
+                "raceStim": "b02",
+                "tool": "t",
+                "race": 87,
+                "toolStim": "trustworthy",
+                "trial_num": 107,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 202,
+                "raceStim": "w06",
+                "tool": "v",
+                "race": 66,
+                "toolStim": "violent",
+                "trial_num": 108,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 456,
+                "raceStim": "b06",
+                "tool": "h",
+                "race": 140,
+                "toolStim": "hostile",
+                "trial_num": 109,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 267,
+                "raceStim": "b05",
+                "tool": "f",
+                "race": 122,
+                "toolStim": "friendly",
+                "trial_num": 110,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 235,
+                "raceStim": "w04",
+                "tool": "a",
+                "race": 45,
+                "toolStim": "aggressive",
+                "trial_num": 111,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 303,
+                "raceStim": "w06",
+                "tool": "c",
+                "race": 70,
+                "toolStim": "criminal",
+                "trial_num": 112,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 259,
+                "raceStim": "w01",
+                "tool": "s",
+                "race": 5,
+                "toolStim": "safe",
+                "trial_num": 113,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 272,
+                "raceStim": "w04",
+                "tool": "c",
+                "race": 46,
+                "toolStim": "criminal",
+                "trial_num": 114,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 395,
+                "raceStim": "w04",
+                "tool": "h",
+                "race": 44,
+                "toolStim": "hostile",
+                "trial_num": 115,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 192,
+                "raceStim": "b02",
+                "tool": "v",
+                "race": 90,
+                "toolStim": "violent",
+                "trial_num": 116,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 389,
+                "raceStim": "b03",
+                "tool": "h",
+                "race": 104,
+                "toolStim": "hostile",
+                "trial_num": 117,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 274,
+                "raceStim": "b06",
+                "tool": "d",
+                "race": 139,
+                "toolStim": "dangerous",
+                "trial_num": 118,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 186,
+                "raceStim": "w04",
+                "tool": "f",
+                "race": 38,
+                "toolStim": "friendly",
+                "trial_num": 119,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 325,
+                "raceStim": "w01",
+                "tool": "h",
+                "race": 8,
+                "toolStim": "hostile",
+                "trial_num": 120,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 322,
+                "raceStim": "w02",
+                "tool": "p",
+                "race": 16,
+                "toolStim": "peaceful",
+                "trial_num": 121,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 306,
+                "raceStim": "b01",
+                "tool": "t",
+                "race": 83,
+                "toolStim": "threatening",
+                "trial_num": 122,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 301,
+                "raceStim": "b04",
+                "tool": "v",
+                "race": 114,
+                "toolStim": "violent",
+                "trial_num": 123,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 270,
+                "raceStim": "b05",
+                "tool": "c",
+                "race": 130,
+                "toolStim": "criminal",
+                "trial_num": 124,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 444,
+                "raceStim": "w02",
+                "tool": "v",
+                "race": 18,
+                "toolStim": "violent",
+                "trial_num": 125,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 419,
+                "raceStim": "w02",
+                "tool": "s",
+                "race": 17,
+                "toolStim": "safe",
+                "trial_num": 126,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 272,
+                "raceStim": "b03",
+                "tool": "t",
+                "race": 107,
+                "toolStim": "threatening",
+                "trial_num": 127,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 510,
+                "raceStim": "w05",
+                "tool": "h",
+                "race": 49,
+                "toolStim": "harmless",
+                "trial_num": 128,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 159,
+                "raceStim": "w03",
+                "tool": "t",
+                "race": 35,
+                "toolStim": "threatening",
+                "trial_num": 129,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 143,
+                "raceStim": "w04",
+                "tool": "v",
+                "race": 42,
+                "toolStim": "violent",
+                "trial_num": 130,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 322,
+                "raceStim": "w02",
+                "tool": "c",
+                "race": 22,
+                "toolStim": "criminal",
+                "trial_num": 131,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 282,
+                "raceStim": "w05",
+                "tool": "t",
+                "race": 59,
+                "toolStim": "threatening",
+                "trial_num": 132,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 187,
+                "raceStim": "b03",
+                "tool": "s",
+                "race": 101,
+                "toolStim": "safe",
+                "trial_num": 133,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 379,
+                "raceStim": "w05",
+                "tool": "h",
+                "race": 56,
+                "toolStim": "hostile",
+                "trial_num": 134,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 165,
+                "raceStim": "w02",
+                "tool": "t",
+                "race": 15,
+                "toolStim": "trustworthy",
+                "trial_num": 135,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 406,
+                "raceStim": "b06",
+                "tool": "f",
+                "race": 134,
+                "toolStim": "friendly",
+                "trial_num": 136,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 325,
+                "raceStim": "w02",
+                "tool": "h",
+                "race": 13,
+                "toolStim": "harmless",
+                "trial_num": 137,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 273,
+                "raceStim": "w05",
+                "tool": "t",
+                "race": 51,
+                "toolStim": "trustworthy",
+                "trial_num": 138,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 279,
+                "raceStim": "b02",
+                "tool": "p",
+                "race": 88,
+                "toolStim": "peaceful",
+                "trial_num": 139,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 166,
+                "raceStim": "w05",
+                "tool": "i",
+                "race": 48,
+                "toolStim": "innocent",
+                "trial_num": 140,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 242,
+                "raceStim": "w05",
+                "tool": "a",
+                "race": 57,
+                "toolStim": "aggressive",
+                "trial_num": 141,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 326,
+                "raceStim": "w04",
+                "tool": "t",
+                "race": 47,
+                "toolStim": "threatening",
+                "trial_num": 142,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 280,
+                "raceStim": "b04",
+                "tool": "d",
+                "race": 115,
+                "toolStim": "dangerous",
+                "trial_num": 143,
+                "responded": 1,
+                "accuracy": 0
+            },
+            {
+                "rt": 258,
+                "raceStim": "b04",
+                "tool": "c",
+                "race": 118,
+                "toolStim": "criminal",
+                "trial_num": 144,
+                "responded": 1,
+                "accuracy": 0
+            }
+        ]
+    },
+    "AcceptTime": "2017-11-24T22:25:08Z",
+    "HITId": "3VI0PC2ZAYKTWSCTRGVDNSP37HEOXD",
+    "Assignment": "",
+    "AssignmentStatus": "Submitted",
+    "SubmitTime": "2017-11-24T22:29:29Z"
+}
