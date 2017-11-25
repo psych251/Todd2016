@@ -1,6 +1,6 @@
 ---
-title: "Replication of Study X by Sample & Sample (200x, Psychological Science)"
-author: "Replication Author[s] (contact information)"
+title: "Replication of Does Seeing Faces of Young Black Boys Facilitate the Identification of Threatening Stimuli? by Todd et al. (2016, Psychological Science)"
+author: "Kiara Sanchez (klsanch@stanford.edu)"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
   html_document:
@@ -161,9 +161,20 @@ d$Ethnicity = factor(d$Ethnicity)
 
 ###Factoring and re-labeling
 
-d$toolType = fct_recode(d$toolType,
-                      "Safe" = "t",
-                        "Threatening" = "g")
+d$toolType = fct_recode(d$toolStim,
+                      "Safe" = "innocent",
+                      "Threatening" = "violent",
+                      "Safe" = "harmless",
+                      "Safe" = "friendly",
+                      "Safe" = "trustworthy",
+                      "Safe" = "peaceful",
+                      "Safe" = "safe",
+                      "Threatening" = "dangerous", 
+                      "Threatening" = "hostile",
+                      "Threatening" = "aggressive",
+                      "Threatening" = "criminal",
+                      "Threatening" = "threatening"
+                      )
 
 d$targetRace = fct_recode(d$targetRace,
                       "Black" = "b",
@@ -199,6 +210,35 @@ d$Ethnicity = fct_recode(d$Ethnicity,
 length(unique(d$workerid))
 
 #### Prepare data for analysis - create columns etc.
+
+####Exclusion 
+
+#non-white 
+d <- d %>%
+  filter(Ethnicity == "Caucasian/White")
+
+length(unique(d$workerid))
+
+#summarize accuracy
+acc <- d %>%
+  filter(responded==1) %>%
+  group_by(workerid) %>%
+summarise(mean_accuracy = mean(accuracy))
+
+#participants with below 50% accuracy 
+assess_accuracy  <- d %>%
+  filter(responded==1) %>%
+  group_by(workerid) %>%
+  summarise(mean_accuracy = mean(accuracy)) %>%
+  filter(mean_accuracy < 0.5)
+
+
+#exclude participants with below 50% accuracy 
+#d = d %>%
+  #filter(workerid != "assess_accuracy IDs")
+
+#prepare data for plotting
+  ##unclear what the best visualization is here...
 ```
 
 ### Confirmatory analysis
@@ -208,21 +248,23 @@ The analyses as specified in the analysis plan.
 ```{r}
 # 2 x 2 anova
 
-t1 <- aov(accuracy ~ targetRace * toolType, data=d)
-summary(t1)
+#t1 <- aov(accuracy ~ targetRace * toolType, data=d)
+#summary(t1)
 
 #calculate replication error
-t1_error = compareValues(reportedValue = , obtainedValue = )
-t1_error 
+#t1_error = compareValues(reportedValue = , obtainedValue = )
+#t1_error 
 
 # calculate eta squared 
-etaSQ_t1 = eta_sq(t1)
-etaSQ_t1 
+#etaSQ_t1 = eta_sq(t1)
+#etaSQ_t1 
 
 #calculate replication error
-t1etaSQ_error = compareValues(reportedValue = , obtainedValue = )
-t1etaSQ_error 
+#t1etaSQ_error = compareValues(reportedValue = , obtainedValue = )
+#t1etaSQ_error 
 ```
+
+
 
 
 *Side-by-side graph with original graph is ideal here*
