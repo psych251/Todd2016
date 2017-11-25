@@ -1,0 +1,242 @@
+---
+title: "Replication of Study X by Sample & Sample (200x, Psychological Science)"
+author: "Replication Author[s] (contact information)"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output:
+  html_document:
+    toc: yes
+    toc_depth: 3
+    toc_float:
+      collapsed: false
+---
+
+<!-- Replication reports should all use this template to standardize reporting across projects.  These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
+
+##Introduction
+
+Implicit bias and social cognition research demonstrates strong cognitive biases linking Black men to threat, crime, and violence (Correll, et al., 2002; Trawalter et al., 2008; Amodio, 2014; Eberhardt et al., 2004). Through object categorization tasks, the current paper found that these stereotypes extend to Black boys. We attempted to replicate Experiment 3, which used photos of both Black boys and men, and "threatening" and "safe" words. We attempted to replicate the following result: 
+
+"Analyses of error-rate data revealed that...there was a significant Race of Prime × Target Word interaction, F(1, 61) = 32.30, p < .001, ηp2 = .35." 
+
+Secondary analyses will attempt to replicate the following result: 
+
+"Participants misidentified safe words as threatening more often after Black primes than after White primes, t(61) = 3.51, p = .001, gav = 0.23, whereas they misidentified threatening words as safe more often after White primes than after Black primes, t(61) = 5.55, p < .001, gav = 0.37."
+
+Link to experiment: http://stanford.edu/~klsanch/Todd2016Replication_KS.html 
+
+##Methods
+
+
+###Power Analysis
+
+Original effect size, power analysis for samples to achieve 80%, 90%, 95% power to detect that effect size.  Considerations of feasibility for selecting planned sample size.
+
+Original $\sf{η_{p}}$^2^ = .35 which translates into an effect size of 0.73 via g*Power software. Power analyses shows that I need 8 participants for 95% power. This effect size is for the 2 (race of prime: Black, White) × 2 (target word: threatening, safe) repeated measures analysis of variance (ANOVA).
+
+
+###Planned Sample
+I proposed a sample of 20 (2.5 times the sample size needed) because I will exclude non-White participants. The original sample consisted of White students, and it is unclear how White participants were recruited. I determined that inclusive recruitment and post hoc exclusion of non-White participants was an approporiate method in order to avoid self-selection bias based on race demographics. See below for other exclusion criteria from original paper: 
+
+"We excluded data from 16 participants with below- chance accuracy on the sequential priming task; retaining their data did not meaningfully alter the results, except that the Race of Prime × Target Word interaction was no longer significant for RTs (p = .116); all other significant effects remained significant (ps < .01). We also excluded data from 2 participants who pressed the same response key on every trial. Computer malfunctions resulted in substantial data loss for 2 additional participants. Together, these exclusions left a final sample of 62 (32 women, 30 men)."
+
+###Materials & Procedure
+"The sequential priming task that we used (adapted from Cesario, Plaks, Hagiwara, Navarrete, & Higgins, 2010) was very similar to that used in Experiment 2b, with these exceptions: First, we replaced the gun and tool images with word stimuli. The participants’ task was to ignore the prime images and instead to rapidly and accurately categorize the words as threatening (violent, dangerous, hostile, aggressive, criminal, and threatening) or safe (innocent, harmless, friendly, trustworthy, peace- ful, and safe). Second, we increased the response dead- line to 750 ms. Each of the 24 face primes was paired with each of the 12 target words, which resulted in 288 randomly ordered experimental trials that appeared in a single block of trials. Eight practice trials preceded the experimental trials."
+
+####Experiment 1 & 2b procedure: 
+"Participants completed a categorization task in which two images flashed on the monitor in quick succession. Participants were instructed to ignore the first image (the prime), which was always a face; it merely signaled that the second image was about to appear. Instead, their pri- mary task was to quickly and accurately categorize the second image (the target object) as a gun or a toy by pressing one of two response keys (key assignments were counterbalanced across participants).
+The primes were 12 photos of boys (6 Black, 6 White) taken from the Child Affective Facial Expression set (LoBue & Thrasher, 2015). We selected these photos using the following criteria: The faces had to be easily categorized by race, to have a neutral expression, to have no idiosyncrasies (e.g., facial scars), and to be similar in actual age (mean age for Black faces = 4.98 years; mean age for White faces = 5.01 years; p > .250). Each photo was cropped so that it included only the head and was standardized in size. The target objects were 6 gun images taken from Payne (2001) and 6 toy images (e.g., a rattle) taken from online sources. The toy images were con- verted to gray scale and sized to match the gun images.
+Each trial sequence began with a blank screen (500 ms), followed by a face prime (200 ms), then a tar- get object (200 ms), and finally a pattern mask (which remained on screen until participants responded). If par- ticipants did not respond within 500 ms, a message (“Please respond faster!”) appeared for 1 s. Each of the 12 face primes was paired once with each of the 12 target objects, which resulted in 144 randomly ordered experi- mental trials. Eight practice trials preceded the experi- mental trials.
+
+The weapon identification tasks used in Experiments 2a and 2b were very similar to that used Experiment 1, with the following exceptions: First, along with the pho- tos of boys, we included 12 photos of men (6 Black, 6 White) taken from the Chicago Face Database (Ma, Cor- rell, & Wittenbrink, 2015). We selected these photos using criteria similar to those used to select the child photos in Experiment 1. Second, we replaced the toy images with 6 images of tools taken from Payne (2001). Each of the 24 face primes was paired once with each of the 12 target objects, which resulted in 288 randomly ordered experi- mental trials. Sixteen practice trials preceded the experi- mental trials. In Experiment 2a, the adult and child primes appeared in separate, counterbalanced blocks of trials. In Experiment 2b, the adult and child primes appeared together in a single block of trials."
+
+###Analysis Plan
+
+Key analysis is a 2 (race of prime: White, Black) x 2 (target word: safe, threatening) repeated measures ANOVA.
+
+
+The key result is a Race of Prime × Target Word interaction. See below: 
+
+"Analyses of error-rate data revealed that, as with the RT data, there was a significant Race of Prime × Target Word interaction, F(1, 61) = 32.30, p < .001, ηp2 = .35."
+
+See "Planned Sample" section for exclusion criteria.
+
+
+**The key result is a Race of Prime × Target Word interaction: F(1, 61) = 32.30, p < .001, ηp2 = .35. **
+
+
+###Differences from Original Study
+
+Explicitly describe known differences in sample, setting, procedure, and analysis plan from original study.  The goal, of course, is to minimize those differences, but differences will inevitably occur.  Also, note whether such differences are anticipated to make a difference based on claims in the original article or subsequent published research on the conditions for obtaining the effect.
+
+### Methods Addendum (Post Data Collection)
+
+You can comment this section out prior to final report with data collection.
+
+#### Actual Sample
+  Sample size, demographics, data exclusions based on rules spelled out in analysis plan
+
+#### Differences from pre-data collection methods plan
+  Any differences from what was described as the original plan, or “none”.
+
+
+##Results
+
+
+### Data preparation
+
+Data preparation following the analysis plan.
+	
+```{r include=F}
+###Data Preparation
+
+####Load Relevant Libraries and Functions
+library(tidyverse)
+library(rjson)
+library(ez)
+library(forcats)
+
+####Import data
+path <- "/Users/kiarasanchez/Desktop/251/Todd2016/"
+
+files <- dir(paste0(path,"sandbox-results/"), 
+             pattern = "*.json")
+d.raw <- data.frame()
+
+for (f in files) {
+  jf <- paste0(path,"sandbox-results/",f)
+  jd <- fromJSON(paste(readLines(jf), collapse=""))
+  
+
+  id <- data.frame(workerid = jd$WorkerId, 
+                   religAff = jd$answers$demographicsData[[1]]$ReligiousAffiliation,
+                   religAtt = jd$answers$demographicsData[[1]]$ReligiousAttendance,
+                   ses = jd$answers$demographicsData[[1]]$SES,
+                   age = jd$answers$demographicsData[[1]]$Age,
+#                   political = jd$answers$demographicsData[[1]]$Political,
+                   comments = jd$answers$demographicsData[[1]]$Comments,
+                   Edu = jd$answers$demographicsData[[1]]$Education,
+                   Citizen = jd$answers$demographicsData[[1]]$Citizen,
+                   Gender = jd$answers$demographicsData[[1]]$Male,
+                   Ethnicity = jd$answers$demographicsData[[1]]$Ethnicity,
+                   trial_num = 1:144,
+                   rt = NA,
+                   accuracy = NA,
+                   raceStim = NA,
+                   toolType= NA,
+                   race = NA,
+                   toolStim = NA,
+                   responded = NA)
+
+for(i in 1:144) {
+    id$rt[id$trial_num == i] <- jd$answers$data[[i]]$rt
+    id$raceStim[id$trial_num == i] <- jd$answers$data[[i]]$raceStim
+    id$toolType[id$trial_num == i] <- jd$answers$data[[i]]$tool
+    id$race[id$trial_num == i] <- jd$answers$data[[i]]$race
+    id$toolStim[id$trial_num == i] <- jd$answers$data[[i]]$toolStim
+    id$responded[id$trial_num == i] <- jd$answers$data[[i]]$responded
+    id$accuracy[id$trial_num == i] <- jd$answers$data[[i]]$accuracy
+  }
+  
+    d.raw <- bind_rows(d.raw, id)
+    
+}
+
+
+summary(d.raw)
+
+#fix race 
+d <- d.raw %>%
+  select(-race) %>%
+  mutate(targetRace = substr(d.raw$raceStim,0,1))
+
+#identify NAs
+d$rt[d$rt == 0] <- NA
+
+d$toolType = factor(d$toolType) 
+d$targetRace = factor(d$targetRace)
+d$Edu = factor(d$Edu) 
+d$Citizen = factor(d$Citizen)
+d$Gender = factor(d$Gender)
+d$Ethnicity = factor(d$Ethnicity)
+
+###Factoring and re-labeling
+
+d$toolType = fct_recode(d$toolType,
+                      "Safe" = "t",
+                        "Threatening" = "g")
+
+d$targetRace = fct_recode(d$targetRace,
+                      "Black" = "b",
+                        "White" = "w")
+d$Edu = fct_recode(d$Edu,
+                   "Some_hs" = "1",
+                   "Completed_hs" = "2",
+                   "Some_college" = "3",
+                   "Bachelors_degree" = "4",
+                   "Masters_Professional_Doctoral" = "5")
+
+d$Citizen = fct_recode(d$Citizen,
+                   "American Citizen" = "1",
+                   "Permanent Resident of the United States" = "2",
+                   "Foreign Citizen" = "3")
+
+d$Gender = fct_recode(d$Gender,
+                   "Male" = "1",
+                   "Female" = "0")
+                   
+d$Ethnicity = fct_recode(d$Ethnicity,
+                    "Caucasian/White" = "1",
+                    "Hispanic/Latino/Latina" = "2",
+                    "African American/Black" = "3",
+                    "Hispanic/Latino/Latina" = "4",
+                    "East Asian" = "5",
+                    "Middle Eastern" = "6",
+                    "Pacific Islander" = "7",
+                    "Native American" = "8",
+                    "Mixed" = "9")
+
+# Number of participants
+length(unique(d$workerid))
+
+#### Prepare data for analysis - create columns etc.
+```
+
+### Confirmatory analysis
+
+The analyses as specified in the analysis plan.  
+
+```{r}
+# 2 x 2 anova
+
+t1 <- aov(accuracy ~ targetRace * toolType, data=d)
+summary(t1)
+
+#calculate replication error
+t1_error = compareValues(reportedValue = , obtainedValue = )
+t1_error 
+
+# calculate eta squared 
+etaSQ_t1 = eta_sq(t1)
+etaSQ_t1 
+
+#calculate replication error
+t1etaSQ_error = compareValues(reportedValue = , obtainedValue = )
+t1etaSQ_error 
+```
+
+
+*Side-by-side graph with original graph is ideal here*
+
+###Exploratory analyses
+
+Any follow-up analyses desired (not required).  
+
+## Discussion
+
+### Summary of Replication Attempt
+
+Open the discussion section with a paragraph summarizing the primary result from the confirmatory analysis and the assessment of whether it replicated, partially replicated, or failed to replicate the original result.  
+
+### Commentary
+
+Add open-ended commentary (if any) reflecting (a) insights from follow-up exploratory analysis, (b) assessment of the meaning of the replication (or not) - e.g., for a failure to replicate, are the differences between original and present study ones that definitely, plausibly, or are unlikely to have been moderators of the result, and (c) discussion of any objections or challenges raised by the current and original authors about the replication attempt.  None of these need to be long.
