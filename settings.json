@@ -5,10 +5,10 @@
     "url":                 "https://stanford.edu/~klsanch/Todd2016Replication_KS.html",
     "frame_height":         450,
     "assignment_duration":  "1 hour",
-    "auto_approval_delay":  "5 minutes",
+    "auto_approval_delay":  "1 day",
     "reward":               1.20,
     "qualifications": {
         "location": "US",
-        "approval_percentage": 85
+        "approval_percentage": 80
     }
 }

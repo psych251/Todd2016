@@ -36,7 +36,7 @@
                 "toolStim": "harmless",
                 "trial_num": 1,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 85,
@@ -46,7 +46,7 @@
                 "toolStim": "violent",
                 "trial_num": 2,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 358,
@@ -56,7 +56,7 @@
                 "toolStim": "trustworthy",
                 "trial_num": 3,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 678,
@@ -66,7 +66,7 @@
                 "toolStim": "safe",
                 "trial_num": 4,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 163,
@@ -76,7 +76,7 @@
                 "toolStim": "peaceful",
                 "trial_num": 5,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 0,
@@ -86,7 +86,7 @@
                 "toolStim": "aggressive",
                 "trial_num": 6,
                 "responded": 0,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 232,
@@ -96,7 +96,7 @@
                 "toolStim": "harmless",
                 "trial_num": 7,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 157,
@@ -106,7 +106,7 @@
                 "toolStim": "friendly",
                 "trial_num": 8,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 248,
@@ -116,7 +116,7 @@
                 "toolStim": "hostile",
                 "trial_num": 9,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 326,
@@ -126,7 +126,7 @@
                 "toolStim": "trustworthy",
                 "trial_num": 10,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 648,
@@ -136,7 +136,7 @@
                 "toolStim": "peaceful",
                 "trial_num": 11,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 299,
@@ -146,7 +146,7 @@
                 "toolStim": "aggressive",
                 "trial_num": 12,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 375,
@@ -156,7 +156,7 @@
                 "toolStim": "hostile",
                 "trial_num": 13,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 62,
@@ -996,7 +996,7 @@
                 "toolStim": "friendly",
                 "trial_num": 97,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 192,
@@ -1006,7 +1006,7 @@
                 "toolStim": "aggressive",
                 "trial_num": 98,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 310,
@@ -1016,7 +1016,7 @@
                 "toolStim": "violent",
                 "trial_num": 99,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 350,
@@ -1026,7 +1026,7 @@
                 "toolStim": "trustworthy",
                 "trial_num": 100,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 279,
@@ -1036,7 +1036,7 @@
                 "toolStim": "peaceful",
                 "trial_num": 101,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 348,
@@ -1046,7 +1046,7 @@
                 "toolStim": "dangerous",
                 "trial_num": 102,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 438,
@@ -1056,7 +1056,7 @@
                 "toolStim": "friendly",
                 "trial_num": 103,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 210,
@@ -1066,7 +1066,7 @@
                 "toolStim": "dangerous",
                 "trial_num": 104,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 244,
@@ -1076,7 +1076,7 @@
                 "toolStim": "dangerous",
                 "trial_num": 105,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 282,
@@ -1086,7 +1086,7 @@
                 "toolStim": "aggressive",
                 "trial_num": 106,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 260,
@@ -1096,7 +1096,7 @@
                 "toolStim": "trustworthy",
                 "trial_num": 107,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 202,
@@ -1106,7 +1106,7 @@
                 "toolStim": "violent",
                 "trial_num": 108,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 456,
@@ -1116,7 +1116,7 @@
                 "toolStim": "hostile",
                 "trial_num": 109,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 267,
@@ -1126,7 +1126,7 @@
                 "toolStim": "friendly",
                 "trial_num": 110,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 235,
@@ -1136,7 +1136,7 @@
                 "toolStim": "aggressive",
                 "trial_num": 111,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 303,
@@ -1146,7 +1146,7 @@
                 "toolStim": "criminal",
                 "trial_num": 112,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 259,
@@ -1156,7 +1156,7 @@
                 "toolStim": "safe",
                 "trial_num": 113,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 272,
@@ -1166,7 +1166,7 @@
                 "toolStim": "criminal",
                 "trial_num": 114,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 395,
@@ -1176,7 +1176,7 @@
                 "toolStim": "hostile",
                 "trial_num": 115,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 192,
@@ -1186,7 +1186,7 @@
                 "toolStim": "violent",
                 "trial_num": 116,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 389,
@@ -1196,7 +1196,7 @@
                 "toolStim": "hostile",
                 "trial_num": 117,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 274,
@@ -1206,7 +1206,7 @@
                 "toolStim": "dangerous",
                 "trial_num": 118,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 186,
@@ -1216,7 +1216,7 @@
                 "toolStim": "friendly",
                 "trial_num": 119,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 325,
@@ -1226,7 +1226,7 @@
                 "toolStim": "hostile",
                 "trial_num": 120,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 322,
@@ -1236,7 +1236,7 @@
                 "toolStim": "peaceful",
                 "trial_num": 121,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 306,
@@ -1246,7 +1246,7 @@
                 "toolStim": "threatening",
                 "trial_num": 122,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 301,
@@ -1256,7 +1256,7 @@
                 "toolStim": "violent",
                 "trial_num": 123,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 270,
@@ -1266,7 +1266,7 @@
                 "toolStim": "criminal",
                 "trial_num": 124,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 444,
@@ -1276,7 +1276,7 @@
                 "toolStim": "violent",
                 "trial_num": 125,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 419,
@@ -1286,7 +1286,7 @@
                 "toolStim": "safe",
                 "trial_num": 126,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 272,
@@ -1296,7 +1296,7 @@
                 "toolStim": "threatening",
                 "trial_num": 127,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 510,
@@ -1306,7 +1306,7 @@
                 "toolStim": "harmless",
                 "trial_num": 128,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 159,
@@ -1316,7 +1316,7 @@
                 "toolStim": "threatening",
                 "trial_num": 129,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 143,
@@ -1326,7 +1326,7 @@
                 "toolStim": "violent",
                 "trial_num": 130,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 322,
@@ -1336,7 +1336,7 @@
                 "toolStim": "criminal",
                 "trial_num": 131,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 282,
@@ -1346,7 +1346,7 @@
                 "toolStim": "threatening",
                 "trial_num": 132,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 187,
@@ -1386,7 +1386,7 @@
                 "toolStim": "friendly",
                 "trial_num": 136,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 325,
@@ -1396,7 +1396,7 @@
                 "toolStim": "harmless",
                 "trial_num": 137,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 273,
@@ -1406,7 +1406,7 @@
                 "toolStim": "trustworthy",
                 "trial_num": 138,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 279,
@@ -1416,7 +1416,7 @@
                 "toolStim": "peaceful",
                 "trial_num": 139,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 166,
@@ -1426,7 +1426,7 @@
                 "toolStim": "innocent",
                 "trial_num": 140,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 242,
@@ -1436,7 +1436,7 @@
                 "toolStim": "aggressive",
                 "trial_num": 141,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 326,
@@ -1446,7 +1446,7 @@
                 "toolStim": "threatening",
                 "trial_num": 142,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 280,
@@ -1456,7 +1456,7 @@
                 "toolStim": "dangerous",
                 "trial_num": 143,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             },
             {
                 "rt": 258,
@@ -1466,7 +1466,7 @@
                 "toolStim": "criminal",
                 "trial_num": 144,
                 "responded": 1,
-                "accuracy": 0
+                "accuracy": 1
             }
         ]
     },

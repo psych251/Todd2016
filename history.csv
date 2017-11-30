@@ -1,2 +1,8 @@
 Time,Action,Data
 2017/11/24 16:24:01,Create,"{u'description': u'A simple game about categorizing words', u'title': u'Perception Study', u'url': u'https://stanford.edu/~klsanch/Todd2016Replication_KS.html', u'assignment_duration': u'1 hour', u'qualifications': {u'location': u'US', u'approval_percentage': 85}, u'frame_height': 450, u'keywords': u'categorization', u'auto_approval_delay': u'5 minutes', u'reward': 1.2}"
+2017/11/28 17:51:48,Expire,
+2017/11/28 17:52:36,Add,3 assignments
+2017/11/28 17:52:42,Add,2 days
+2017/11/29 11:48:05,Create,"{u'description': u'A simple game about categorizing words', u'title': u'Perception Study', u'url': u'https://stanford.edu/~klsanch/Todd2016Replication_KS.html', u'assignment_duration': u'1 hour', u'qualifications': {u'location': u'US', u'approval_percentage': 80}, u'frame_height': 450, u'keywords': u'categorization', u'auto_approval_delay': u'1 day', u'reward': 1.2}"
+2017/11/29 11:52:32,Create,"{u'description': u'A simple game about categorizing words', u'title': u'Perception Study', u'url': u'https://stanford.edu/~klsanch/Todd2016Replication_KS.html', u'assignment_duration': u'1 hour', u'qualifications': {u'location': u'US', u'approval_percentage': 80}, u'frame_height': 450, u'keywords': u'categorization', u'auto_approval_delay': u'1 day', u'reward': 1.2}"
+2017/11/29 11:56:52,Create,"{u'description': u'A simple game about categorizing words', u'title': u'Perception Study', u'url': u'https://stanford.edu/~klsanch/Todd2016Replication_KS.html', u'assignment_duration': u'1 hour', u'qualifications': {u'location': u'US', u'approval_percentage': 80}, u'frame_height': 450, u'keywords': u'categorization', u'auto_approval_delay': u'1 day', u'reward': 1.2}"

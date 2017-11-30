@@ -32,39 +32,34 @@ Array.prototype.shuffle = function() {
 
 //PRE-LOAD IMAGES
 // By creating image object and setting source, images preload
-var whitefaceimages = ["w01","w02","w03","w04","w05","w06"]
-var blackfaceimages = ["b01","b02","b03","b04","b05","b06"]
-var gunimages = ["g1","g2","g3","g4","g5","g6"]
-var toyimages = ["t1","t2","t3","t4","t5","t6"]
-var images = new Array() 
-for (i=0;i<6;i++) {//loop through images you want to use
-    images[i] = new Image()
-    images[i].src =  "https://www.stanford.edu/~cinoolee/PSYC254/images/" + whitefaceimages[i] + ".bmp"
-    images[i] = new Image()
-    images[i].src =  "https://www.stanford.edu/~cinoolee/PSYC254/images/" + blackfaceimages[i] + ".bmp"
-}
 var mask = new Image()
-    mask.src =  "https://www.stanford.edu/~cinoolee/PSYC254/images/Mask.bmp"
+    mask.src =  "https://www.stanford.edu/~klsanch/images/Mask.bmp"
 
-var face_list = [];
-
-var image = ["w01","w02","w03","w04","w05","w06","b01","b02","b03","b04","b05","b06"]
-
+// IMPORTANT NOTE!!!!!!!
+//   01 - 06 are boys, 07-12 are men.
+var image = ["w01","w02","w03","w04","w05","w06","w07","w08","w09", "w10", "w11", "w12","b01","b02","b03","b04","b05","b06", "b07", "b08", "b09", "b10", "b11", "b12"]
 var arrayLength = image.length;
-for (var i = 0; i < arrayLength; i++) {
-  face_list = face_list.concat(Array(12).fill(image[i]));
-}
 
 //PRE-LOAD WORDS
 var safeWords = ["innocent", "harmless", "friendly", "trustworthy", "peaceful", "safe"]
 var threatWords = ["violent", "dangerous", "hostile", "aggressive", "criminal", "threatening"]
+var words = safeWords.concat(threatWords);
 
-var tool_list = []
-var tools = safeWords.concat(threatWords);
-var arrayLength = tools.length;
+
+// Generate face_list
+var face_list = [];
 for (var i = 0; i < arrayLength; i++) {
-  tool_list = tool_list.concat(tools);
+  face_list = face_list.concat(Array(words.length).fill(image[i]));
 }
+
+// Generate word list
+var word_list = []
+for (var i = 0; i < arrayLength; i++) {
+  word_list = word_list.concat(words);
+}
+
+// Calculate number of trials
+var num_trials = 288;
 
 function shuffle (array) {
   var i = 0
@@ -79,8 +74,8 @@ function shuffle (array) {
   }
 }
 
-var trial_list = Array.apply(null, {length: 144}).map(Number.call, Number).shuffle()
-var trial_list_save = trial_list 
+var trial_list = Array.apply(null, {length: num_trials}).map(Number.call, Number).shuffle()
+var trial_list_save = trial_list
 
 var practice_list =  trial_list.shuffle().slice(0,8)
 var practice_list_save = practice_list
@@ -96,15 +91,15 @@ var allKeyBindings = [
     fairKey = "";
     unfairKey = "";
     if (myKeyBindings["p"] == "threatening") {
-      fairKey = "P";
-      unfairKey = "Q";      
-      leftKey = "threatening";
-      rightKey = "safe";
-    } else {
       fairKey = "Q";
       unfairKey = "P";
       leftKey = "safe";
       rightKey = "threatening";
+    } else {
+      fairKey = "P";
+      unfairKey = "Q";
+      leftKey = "threatening";
+      rightKey = "safe";
     }
 
 $("#fair-key").html(fairKey);
@@ -123,7 +118,7 @@ var practice = {
   trialOrder: practice_list[0],
   keyBindings: myKeyBindings,
   faceInput: "",
-  toolInput: "",
+  wordInput: "",
   data: [],
   trialNumber: 0,
   end: function() {
@@ -141,29 +136,27 @@ var practice = {
     }
 
       practice.faceInput = face_list[practice_list[0]];
-      practice.toolInput = tool_list[practice_list[0]];
+      practice.wordInput = word_list[practice_list[0]];
       practice_list.shift();
 
-    var url ="https://www.stanford.edu/~cinoolee/PSYC254/images/"+practice.faceInput+".bmp";
     return practice.face();
   },
   face: function() {
-    var url ="https://www.stanford.edu/~cinoolee/PSYC254/images/"+practice.faceInput+".bmp";
+    var url ="https://www.stanford.edu/~klsanch/images/"+practice.faceInput+".bmp";
     showSlide("stage");
-    $("#image").html('<img src="'+url+'">');    
-    setTimeout(practice.tool, 200);
+    $("#image").html('<img src="'+url+'" width="auto" height="75%"/>');    
+    setTimeout(practice.word, 200);
   },
-  tool: function() {
-    var url ="https://www.stanford.edu/~cinoolee/PSYC254/images/"+practice.toolInput+".bmp";
-    var txt = practice.toolInput;
+  word: function() {
+    var txt = practice.wordInput;
     showSlide("stage");
-    $("#image").html('<br><br><br><H1>' + txt + '</H1>');
+    $("#image").html('<br><br><br><br><br><br><br><br><br><br><H1>' + txt + '</H1>');
     var startTime = (new Date()).getTime();
     setTimeout(practice.mask1, 200);
   },
   mask1: function() {
     practice.trialNumber++;
-    var url ="https://www.stanford.edu/~cinoolee/PSYC254/images/Mask.bmp";
+    var url ="https://www.stanford.edu/~klsanch/images/Mask.bmp";
     showSlide("stage");
     $("#image").html('<img src="'+url+'"  width="75%" height="75%"/>');
     if (practice.trialNumber > 8) {
@@ -194,7 +187,7 @@ var practice = {
   pass: function() {
     var url ="https://www.stanford.edu/~cinoolee/PSYC254/images/pass.png";
     showSlide("stage");
-    $("#image").html('<img src="'+url+'">');
+    $("#image").html('<br><br><br><br><br><img src="'+url+'">');
     var keyPressHandler = function(event) {
       var keyCode = event.which;      
       if (keyCode != 32) {
@@ -227,14 +220,14 @@ var experiment = {
   practice_order:practice_list_save,
   //whiteFaceTrials: myTrialWhiteFacesOrder,
   //blackFaceTrials: myTrialBlackFacesOrder,
-  //whiteToolTrials: myTrialWhiteToolsOrder,
-  //blackToolTrials: myTrialBlackToolsOrder,
+  //whitewordTrials: myTrialWhitewordsOrder,
+  //blackwordTrials: myTrialBlackwordsOrder,
   //trialOrder: myTrialOrder,
   keyBindings: myKeyBindings,
   faceInput: "",
-  toolInput: "",
+  wordInput: "",
   faceType: "",
-  toolType: "",
+  wordType: "",
   data: [],
   demographicsData: [],
   end: function() {
@@ -252,32 +245,32 @@ var experiment = {
 
 
     experiment.faceInput = face_list[trial_list[0]];
-    experiment.toolInput = tool_list[trial_list[0]];
+    experiment.wordInput = word_list[trial_list[0]];
 
     trial_list.shift();
     
     experiment.faceType = typeTrial;
-    var toolString = ""+experiment.toolInput+"";
-    experiment.toolType = toolString.charAt(0);
+    var wordString = experiment.wordInput;
+    experiment.wordType =  (safeWords.indexOf(wordString) != -1)?"safe":"threatening";
     return experiment.face();
   },
   face: function() {
     $(document).unbind();
-    var url ="https://www.stanford.edu/~cinoolee/PSYC254/images/"+experiment.faceInput+".bmp";
+    var url ="https://www.stanford.edu/~klsanch/images/"+experiment.faceInput+".bmp";
     showSlide("stage");
-    $("#image").html('<img src="'+url+'">');    
-    setTimeout(experiment.tool, 200);
+    $("#image").html('<img src="'+url+'" width="auto" height="75%" />');    
+    setTimeout(experiment.word, 200);
   },
-  tool: function() {
+  word: function() {
     var timeOut = setTimeout(experiment.slow, 950);  
-    var txt = experiment.toolInput;
+    var txt = experiment.wordInput;
     showSlide("stage");
-    $("#image").html('<br><br><br><H1>' + txt + '</H1>');
-    var realParity = (experiment.toolType=="s")?"gun":"toy";
+    $("#image").html('<br><br><br><br><br><br><br><br><br><br><H1>' + txt + '</H1>');
+    var realParity = experiment.wordType;
     var startTime = (new Date()).getTime();
     var maskOut=setTimeout(function(){ 
 		showSlide("stage");
-    	$("#image").html('<img src="https://stanford.edu/~cinoolee/PSYC254/images/Mask.bmp" width="75%" height="75%"/>');
+    	$("#image").html('<img src="https://stanford.edu/~klsanch/images/Mask.bmp" width="75%" height="75%"/>');
   		}
   	,200);
     var keyPressHandler = function(event) {
@@ -289,12 +282,14 @@ var experiment = {
             key = (keyCode == 80) ? "p" : "q",
             userParity = experiment.keyBindings[key];
             data = {
-           trial_num: 144 - trial_list.length,
+           trial_num: num_trials - trial_list.length,
               race: experiment.faceType,
-              tool: experiment.toolType,
+              word: experiment.wordType,
               raceStim: experiment.faceInput,
-              toolStim: experiment.toolInput,
-              accuracy: realParity == userParity ? 1 : 0,
+              wordStim: experiment.wordInput,
+              correctResponse: realParity,
+              userResponse: userParity,
+              correct: realParity == userParity ? 1 : 0,
               rt: endTime - startTime,
               responded: 1
             };
@@ -311,7 +306,7 @@ var experiment = {
   pass: function() {
     var url ="https://www.stanford.edu/~cinoolee/PSYC254/images/pass.png";
     showSlide("stage");
-    $("#image").html('<img src="'+url+'">');
+    $("#image").html('<br><br><br><br><br><img src="'+url+'">');
     var keyPressHandler = function(event) {
       var keyCode = event.which;      
       if (keyCode != 32) {
@@ -325,12 +320,12 @@ var experiment = {
   slow: function() {
     $(document).unbind();
     data = {
-      trial_num: 144 - trial_list.length,
+      trial_num: num_trials - trial_list.length,
       race: experiment.faceType,
-      tool: experiment.toolType,
+      word: experiment.wordType,
       raceStim: experiment.faceInput,
-      toolStim: experiment.toolInput,
-      accuracy: 0,
+      wordStim: experiment.wordInput,
+      correct: 0,
       rt: 0,
       responded: 0
     };     
