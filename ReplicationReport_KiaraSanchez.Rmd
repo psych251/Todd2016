@@ -72,7 +72,7 @@ library(sjstats)
 library(knitr)
 
 ####Import data
-path <- "/Users/kiarasanchez/Desktop/251/Todd2016/production-results/"
+path <- "/Users/kiarasanchez/Desktop/251/production-results/"
 
 files <- dir(path, pattern = "*.json")
 
@@ -134,29 +134,15 @@ d <- d.raw %>%
 #identify NAs
 d$rt[d$rt == 0] <- NA
 
-d$word = factor(d$word) 
-d$targetRace = factor(d$targetRace)
-d$Edu = factor(d$Edu) 
-d$Citizen = factor(d$Citizen)
-d$Gender = factor(d$Gender)
-d$Ethnicity = factor(d$Ethnicity)
+d$word = as.factor(d$word) 
+d$targetRace = as.factor(d$targetRace)
+d$Edu = as.factor(d$Edu) 
+d$Citizen = as.factor(d$Citizen)
+d$Gender = as.factor(d$Gender)
+d$Ethnicity = as.factor(d$Ethnicity)
+d$correct = as.factor(d$correct)
 
 ###Factoring and re-labeling
-
-d$word = fct_recode(d$wordStim,
-                      "Safe" = "innocent",
-                      "Threatening" = "violent",
-                      "Safe" = "harmless",
-                      "Safe" = "friendly",
-                      "Safe" = "trustworthy",
-                      "Safe" = "peaceful",
-                      "Safe" = "safe",
-                      "Threatening" = "dangerous", 
-                      "Threatening" = "hostile",
-                      "Threatening" = "aggressive",
-                      "Threatening" = "criminal",
-                      "Threatening" = "threatening"
-                      )
 
 d$targetRace = fct_recode(d$targetRace,
                       "Black" = "b",
@@ -198,11 +184,11 @@ d <- d %>%
 length(unique(d$workerid))
 
 #participants with below 50% accuracy 
-assess_accuracy  <- d %>%
+assess_correct  <- d %>%
   filter(responded==1) %>%
-  group_by(workerid) #%>%
-  summarise(mean_accuracy = mean(accuracy))# %>%
-  filter(mean_accuracy < 0.5)
+  group_by(workerid) %>%
+  summarise(mean_correct = mean(correct))# %>%
+  filter(mean_correct < 0.5)
 
 #exclude participants with below 50% accuracy
 #d = d %>%
@@ -212,6 +198,7 @@ assess_accuracy  <- d %>%
 
   #reverse code accuracy in order to calculate % error 
      #new variable = 'error', levels: 1 = incorrect, 0 = correct 
+d$correct = as.factor(d$correct)
 d$error = fct_recode(d$correct,
                    1 = 0,
                    0 = 1)

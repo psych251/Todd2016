@@ -67,12 +67,13 @@ library(ez)
 library(forcats)
 library(plyr)
 library(dplyr)
-install.packages('TMB')
+#install.packages('TMB')
+library(TMB)
 library(sjstats)
 library(knitr)
 
 ####Import data
-path <- "/Users/kiarasanchez/Desktop/251/Todd2016/production-results/"
+path <- "/Users/kiarasanchez/Desktop/251/Todd2016/sandbox-old/"
 
 files <- dir(path, pattern = "*.json")
 
@@ -81,12 +82,12 @@ files <- dir(path, pattern = "*.json")
 d.raw <- data.frame()
 
 for (f in files) {
-  jf <- paste0(path,f)
-  jd <- fromJSON(file=jf)
+ jf <- paste0(path,f)
+jd <- fromJSON(file=jf)
 
 #for (f in files) {
- # jf <- paste0(path, f)
-#  jd <- fromJSON(paste(readLines(jf), collapse=""))
+ #jf <- paste0(path, f)
+  #jd <- fromJSON(paste(readLines(jf), collapse=""))
   
 
   id <- data.frame(workerid = jd$WorkerId, 
@@ -102,21 +103,21 @@ for (f in files) {
                    Ethnicity = jd$answers$demographicsData[[1]]$Ethnicity,
                    trial_num = 1:288,
                    rt = NA,
-                   correct = NA,
+                   accuracy = NA,
                    raceStim = NA,
-                   word= NA,
-                   race = NA,
-                   wordStim = NA,
+                   tool= NA,
+                   #race = NA,
+                   toolStim = NA,
                    responded = NA)
 
 for(i in 1:144) {
     id$rt[id$trial_num == i] <- jd$answers$data[[i]]$rt
     id$raceStim[id$trial_num == i] <- jd$answers$data[[i]]$raceStim
-    id$word[id$trial_num == i] <- jd$answers$data[[i]]$word
-    id$race[id$trial_num == i] <- jd$answers$data[[i]]$race
-    id$wordStim[id$trial_num == i] <- jd$answers$data[[i]]$wordStim
+    id$tool[id$trial_num == i] <- jd$answers$data[[i]]$tool
+    #id$race[id$trial_num == i] <- jd$answers$data[[i]]$race
+    id$toolStim[id$trial_num == i] <- jd$answers$data[[i]]$toolStim
     id$responded[id$trial_num == i] <- jd$answers$data[[i]]$responded
-    id$correct[id$trial_num == i] <- jd$answers$data[[i]]$correct
+    id$accuracy[id$trial_num == i] <- jd$answers$data[[i]]$accuracy
   }
   
     d.raw <- bind_rows(d.raw, id)
@@ -128,13 +129,13 @@ summary(d.raw)
 
 #fix race 
 d <- d.raw %>%
-  select(-race) %>%
+  #select(-race) %>%
   mutate(targetRace = substr(d.raw$raceStim,0,1))
 
 #identify NAs
 d$rt[d$rt == 0] <- NA
 
-d$word = factor(d$word) 
+d$tool = factor(d$tool) 
 d$targetRace = factor(d$targetRace)
 d$Edu = factor(d$Edu) 
 d$Citizen = factor(d$Citizen)
@@ -143,7 +144,7 @@ d$Ethnicity = factor(d$Ethnicity)
 
 ###Factoring and re-labeling
 
-d$word = fct_recode(d$wordStim,
+d$tool = fct_recode(d$toolStim,
                       "Safe" = "innocent",
                       "Threatening" = "violent",
                       "Safe" = "harmless",
@@ -192,39 +193,26 @@ length(unique(d$workerid))
 ####Exclusion 
 
 #non-white 
-d <- d %>%
-  filter(Ethnicity == "Caucasian/White")
+#d <- d %>%
+  #filter(Ethnicity == "Caucasian/White")
 
 length(unique(d$workerid))
 
 #participants with below 50% accuracy 
-assess_accuracy  <- d %>%
-  filter(responded==1) %>%
-  group_by(workerid) #%>%
-  summarise(mean_accuracy = mean(accuracy))# %>%
-  filter(mean_accuracy < 0.5)
+#assess_accuracy  <- d %>%
+ # filter(responded==1) %>%
+ # group_by(workerid) %>%
+ # summarise(mean_accuracy = mean(accuracy))# %>%
+ # filter(mean_accuracy < 0.5)
 
 #exclude participants with below 50% accuracy
 #d = d %>%
  #filter(workerid != "INCLUDE IDs HERE")
 
-#summarize error rate
-
-  #reverse code accuracy in order to calculate % error 
-     #new variable = 'error', levels: 1 = incorrect, 0 = correct 
-d$error = fct_recode(d$correct,
-                   1 = 0,
-                   0 = 1)
-
 
 #exclude responded == 0
 d = d %>%
   filter(responded == 1)
-
-error <- d %>%
-  group_by(targetRace, workerid) %>%
-summarise(error_rate = mean(error))
-kable(error)
 
 #print head 
 kable(head(d))
@@ -232,9 +220,9 @@ kable(head(d))
 #prepare data for plotting
   #this code is set up to output a graph for the interaction of time (pre and post) and condition (waitlist and class) on the dependent variable (YVAR) of your choice. To use just replace 'YVAR' with the name of your variable of interest. You should replace it 3 times. 
 
-dv <- ddply(d, .(targetRace,word), summarise, accuracy = mean(accuracy, na.rm=TRUE)) #calculate mean Ys
-dvsd = ddply(d, .(targetRace,word), summarise, sdY = sd(accuracy,na.rm=TRUE)) #calculate sd
-dvl = ddply(d, .(targetRace,word), summarise, lY = length(accuracy)) #calculate 'n'
+dv <- ddply(d, .(targetRace,tool), summarise, accuracy = mean(accuracy, na.rm=TRUE)) #calculate mean Ys
+dvsd = ddply(d, .(targetRace,tool), summarise, sdY = sd(accuracy,na.rm=TRUE)) #calculate sd
+dvl = ddply(d, .(targetRace,tool), summarise, lY = length(accuracy)) #calculate 'n'
 dv$sdY = dvsd$sdY #add sd to dataframe
 dv$lY = dvl$lY #add N to dataframe
 dv$seY = dv$sdY/sqrt(dv$lY) #calculate standard error
@@ -242,7 +230,6 @@ dv$upper = dv$accuracy + dv$seY #calculate +1 se interval upper limit
 dv$lower = dv$accuracy - dv$seY #calculate -1 se intervale lower limit
 #dv = dv[c(-3,-6),]
 
-#dv$word = factor(dv$word, labels = c("Safe","Threatening")) #Make sure X1 is a factor with interpretable labels
 ```
 
 ### Confirmatory analysis
@@ -252,8 +239,9 @@ The analyses as specified in the analysis plan.
 ```{r}
 # 2 x 2 anova
 
-t1 <- aov(accuracy ~ targetRace * word, data=d)
-kable(summary(t1))
+t1 <- aov(accuracy ~ targetRace * tool, data=d)
+t1s = anova(t1)
+kable(t1s)
 
 #calculate replication error
 #t1_error = compareValues(reportedValue = , obtainedValue = )
@@ -261,7 +249,7 @@ kable(summary(t1))
 
 # calculate eta squared 
 etaSQ_t1 = eta_sq(t1)
-print(etaSQ_t1) 
+kable(etaSQ_t1) 
 
 #calculate replication error
 #t1etaSQ_error = compareValues(reportedValue = , obtainedValue = )
@@ -270,16 +258,18 @@ print(etaSQ_t1)
 
 ```{r}
 dodge <- position_dodge(width=0.8) 
-plot = ggplot(dv, aes(x = word, y = accuracy)) +
+plot = ggplot(dv, aes(x = tool, y = accuracy)) +
   geom_bar(stat="identity", width = .8, aes(fill=targetRace),position = "dodge") +
   scale_fill_brewer(palette="Set1")  + #change colors of the bars
   scale_y_continuous(limits=c(0,1)) + #this changes the Y axis, make sure to include 0
   theme(axis.text.y = element_text(face="italic",size = rel(1.5),angle=90, hjust=1, vjust=.5)) + #changes y axis text
   theme(axis.title.y=element_text(size=rel(1.5))) + #changes y axis text
   theme_bw()+ #gives it a nice clean theme (purely aesthetic)
-  geom_errorbar(aes(ymax=upper, ymin=lower, fill= targetRace),width=.25, position = dodge) #+ #adds error bars!
+  geom_errorbar(aes(ymax=upper, ymin=lower, fill= targetRace),width=.25, position = dodge) + #adds error bars!
   #theme(panel.background = element_rect(fill="white",colour="white", size = rel(2)))+theme(panel.border = element_blank()) #more aesthetic changes
-
+ggtitle("Replication Data") +
+  labs(y= "error rate", x= "word") + 
+    theme(plot.title = element_text(hjust = 0.5))
 ```
 
 
@@ -305,19 +295,22 @@ dvl = ddply(o, .(targetRace,word), summarise, lY = length(mean)) #calculate 'n'
 dv$sdY = dvsd$sdY #add sd to dataframe
 dv$lY = dvl$lY #add N to dataframe
 dv$seY = dv$sdY/sqrt(dv$lY) #calculate standard error
-dv$upper = dv$mean + dv$seY #calculate +1 se interval upper limit
-dv$lower = dv$mean - dv$seY #calculate -1 se intervale lower limit
+dv$upper = dv$accuracy + dv$seY #calculate +1 se interval upper limit
+dv$lower = dv$accuracy - dv$seY #calculate -1 se intervale lower limit
 
 dodge <- position_dodge(width=0.8) 
-plot_o = ggplot(o, aes(x = word, y = mean)) +
+plot_o = ggplot(dv, aes(x = word, y = accuracy)) +
   geom_bar(stat="identity", width = .8, aes(fill=targetRace),position = "dodge") +
   scale_fill_brewer(palette="Set1")  + #change colors of the bars
-  scale_y_continuous(limits=c(0,1)) + #this changes the Y axis, make sure to include 0
+  scale_y_continuous(limits=c(0,40)) + #this changes the Y axis, make sure to include 0
   theme(axis.text.y = element_text(face="italic",size = rel(1.5),angle=90, hjust=1, vjust=.5)) + #changes y axis text
   theme(axis.title.y=element_text(size=rel(1.5))) + #changes y axis text
   theme_bw()+ #gives it a nice clean theme (purely aesthetic)
-  geom_errorbar(aes(ymax=upper, ymin=lower, fill= targetRace),width=.25, position = dodge) #+ #adds error bars!
-  #theme(panel.background = element_rect(fill="white",colour="white", size = rel(2)))+theme(panel.border = element_blank()) #more aesthetic changes
+  geom_errorbar(aes(ymax=upper, ymin=lower, fill= targetRace),width=.25, position = dodge) + #adds error bars!
+  #theme(panel.background = element_rect(fill="white",colour="white", size = rel(2)))+theme(panel.border = element_blank()) #more aesthetic changes 
+ ggtitle("Original Data") +
+  labs(y= "error rate") +
+  theme(plot.title = element_text(hjust = 0.5))
 ```
 
 
