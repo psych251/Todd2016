@@ -33,6 +33,9 @@ packrat/src*/
 *.httr-oauth
 *.DS_Store
 
+#Raw data 
+*.json
+
 # MTurk credentials and data
 auth.json
 my-own-auth.json

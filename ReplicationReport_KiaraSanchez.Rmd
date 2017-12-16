@@ -39,13 +39,13 @@ I proposed a sample of 20 (2.5 times the sample size needed) so we can exclude n
 The primes were 12 photos of boys (6 Black, 6 White) taken from the Child Affective Facial Expression set (LoBue & Thrasher, 2015). We selected these photos using the following criteria: The faces had to be easily categorized by race, to have a neutral expression, to have no idiosyncrasies (e.g., facial scars), and to be similar in actual age (mean age for Black faces = 4.98 years; mean age for White faces = 5.01 years; p > .250). Each photo was cropped so that it included only the head and was standardized in size. The target objects were 6 gun images taken from Payne (2001) and 6 toy images (e.g., a rattle) taken from online sources. The toy images were con- verted to gray scale and sized to match the gun images.
 Each trial sequence began with a blank screen (500 ms), followed by a face prime (200 ms), then a tar- get object (200 ms), and finally a pattern mask (which remained on screen until participants responded). If par- ticipants did not respond within 500 ms, a message (“Please respond faster!”) appeared for 1 s. Each of the 12 face primes was paired once with each of the 12 target objects, which resulted in 144 randomly ordered experi- mental trials. Eight practice trials preceded the experimental trials.
 
-> The weapon identification tasks used in Experiments 2a and 2b were very similar to that used Experiment 1, with the following exceptions: First, along with the pho- tos of boys, we included 12 photos of men (6 Black, 6 White) taken from the Chicago Face Database (Ma, Correll, & Wittenbrink, 2015). We selected these photos using criteria similar to those used to select the child photos in Experiment 1. Second, we replaced the toy images with 6 images of tools taken from Payne (2001). Each of the 24 face primes was paired once with each of the 12 target objects, which resulted in 288 randomly ordered experi- mental trials. Sixteen practice trials preceded the experi- mental trials. In Experiment 2a, the adult and child primes appeared in separate, counterbalanced blocks of trials. In Experiment 2b, the adult and child primes appeared together in a single block of trials."
+> The weapon identification tasks used in Experiments 2a and 2b were very similar to that used Experiment 1, with the following exceptions: First, along with the pho- tos of boys, we included 12 photos of men (6 Black, 6 White) taken from the Chicago Face Database (Ma, Correll, & Wittenbrink, 2015). We selected these photos using criteria similar to those used to select the child photos in Experiment 1. Second, we replaced the toy images with 6 images of tools taken from Payne (2001). Each of the 24 face primes was paired once with each of the 12 target objects, which resulted in 288 randomly ordered experi- mental trials. Sixteen practice trials preceded the experimental trials. In Experiment 2a, the adult and child primes appeared in separate, counterbalanced blocks of trials. In Experiment 2b, the adult and child primes appeared together in a single block of trials."
 
 ###Analysis Plan
 
 Key analysis is a 2 (race of prime: White, Black) x 2 (target word: safe, threatening) within-subjects repeated measures ANOVA.
 
-**The key result is a Race of Prime × Target Word interaction: F(1, 61) = 32.30, p < .001, ηp2 = .35. **
+**The key result is a Race of Prime × Target Word interaction: F(1, 61) = 32.30, p < .001, ηp2 = .35.**
 
 See "Planned Sample" section for exclusion criteria.
 
@@ -54,10 +54,22 @@ See "Planned Sample" section for exclusion criteria.
 
 The original study sample consisted of White undergraduate college students. We recruited adult participants through MTurk and excluded non-White participants. We do not anticipate significant differences in results based on these criteria.
 
+###Methods Addendum
+
+####Actual Sample
+  Twenty mTurk participants completed the study. We excluded 6 participants who indicated that they were from a non-white ethnic group. Nobody's error rate was above 50%, and no participants reported having computer problems in their survey. Thus, our final sample size was 14. 
+
+####Differences from pre-data collection methods plan
+It should be noted that our pre-analysis plan differs from our actual analyses in that we planned to run a 2 (target race) x 2 (word) ANOVA. However, the correct analysis to run for our key result is a 2 (target race) x 2 (word) x 2 (target age) ANOVA. Thus, we ran the power analyses again for the appropriate test, and our needed sample size to obtain 95% power was actually 12, not the proposed 8. This requirement is still appropriate for our obtained sample of 14, so we did not have to re-collect data. 
+
+To address the change in analysis, we ran both the preregistered test (2x2) and the corrected analysis. Our results section will reflect the correct analysis (2x2x2). 
+
+
+##Results 
 
 ### Data preparation
 
-```{r}
+```{r warning=FALSE, error=FALSE, message=FALSE}
 ###Data Preparation
 
 ####Load Relevant Libraries and Functions
@@ -65,73 +77,24 @@ library(tidyverse)
 library(rjson)
 library(ez)
 library(forcats)
-library(plyr)
-library(dplyr)
-install.packages('TMB')
+#install.packages('TMB')
+library(TMB)
 library(sjstats)
 library(knitr)
 
 ####Import data
-path <- "/Users/kiarasanchez/Desktop/251/production-results/"
+#NOTE: We are importing pre-processed data here. Raw data from .json files were anonymized in separate R Script and exported as a .csv file. Raw .json files are not in the github folder to protect participants' privacy, but the code we used to anonymize and export as .csv can be found in this github repo (file name: "code_anonymizeData"). 
 
-files <- dir(path, pattern = "*.json")
+d.anonym = read_csv("data_anonymized.csv")
 
-#files <- dir(paste0(path,"sandbox-results/"), 
-             #pattern = "*.json")
-d.raw <- data.frame()
-
-for (f in files) {
-  jf <- paste0(path,f)
-  jd <- fromJSON(file=jf)
-
-#for (f in files) {
- # jf <- paste0(path, f)
-#  jd <- fromJSON(paste(readLines(jf), collapse=""))
-  
-
-  id <- data.frame(workerid = jd$WorkerId, 
-                   religAff = jd$answers$demographicsData[[1]]$ReligiousAffiliation,
-                   religAtt = jd$answers$demographicsData[[1]]$ReligiousAttendance,
-                   ses = jd$answers$demographicsData[[1]]$SES,
-                   age = jd$answers$demographicsData[[1]]$Age,
-#                   political = jd$answers$demographicsData[[1]]$Political,
-                   comments = jd$answers$demographicsData[[1]]$Comments,
-                   Edu = jd$answers$demographicsData[[1]]$Education,
-                   Citizen = jd$answers$demographicsData[[1]]$Citizen,
-                   Gender = jd$answers$demographicsData[[1]]$Male,
-                   Ethnicity = jd$answers$demographicsData[[1]]$Ethnicity,
-                   trial_num = 1:288,
-                   rt = NA,
-                   correct = NA,
-                   raceStim = NA,
-                   word= NA,
-                   race = NA,
-                   wordStim = NA,
-                   responded = NA)
-
-for(i in 1:144) {
-    id$rt[id$trial_num == i] <- jd$answers$data[[i]]$rt
-    id$raceStim[id$trial_num == i] <- jd$answers$data[[i]]$raceStim
-    id$word[id$trial_num == i] <- jd$answers$data[[i]]$word
-    id$race[id$trial_num == i] <- jd$answers$data[[i]]$race
-    id$wordStim[id$trial_num == i] <- jd$answers$data[[i]]$wordStim
-    id$responded[id$trial_num == i] <- jd$answers$data[[i]]$responded
-    id$correct[id$trial_num == i] <- jd$answers$data[[i]]$correct
-  }
-  
-    d.raw <- bind_rows(d.raw, id)
-    
-}
-
-
-summary(d.raw)
+summary(d.anonym)
 
 #fix race 
-d <- d.raw %>%
+d <- d.anonym %>%
   select(-race) %>%
-  mutate(targetRace = substr(d.raw$raceStim,0,1))
+  mutate(targetRace = substr(d.anonym$raceStim,0,1))
 
-#identify NAs
+#mark NAs
 d$rt[d$rt == 0] <- NA
 
 d$word = as.factor(d$word) 
@@ -140,7 +103,7 @@ d$Edu = as.factor(d$Edu)
 d$Citizen = as.factor(d$Citizen)
 d$Gender = as.factor(d$Gender)
 d$Ethnicity = as.factor(d$Ethnicity)
-d$correct = as.factor(d$correct)
+d$raceStim = as.factor(d$raceStim)
 
 ###Factoring and re-labeling
 
@@ -171,144 +134,246 @@ length(unique(d$workerid))
 #create targetAge variable 
   # levels: child, adult
   # 01-06 = child, 07-12 = adult
-#d$targetAge = fct_recode(d$raceStim,
-                   # "child" = ends_with(01),
-                   # "adult" = ends_with(07))
+d = d %>%
+  mutate(targetAge = recode(raceStim, 
+                            "w01" = "child",
+                            "w02"= "child",
+                            "w03"= "child",
+                            "w04"= "child",
+                            "w05"= "child",
+                            "w06"= "child",
+                            "b01"= "child",
+                            "b02"= "child",
+                            "b03"= "child",
+                            "b04"= "child",
+                            "b05"= "child",
+                            "b06"= "child",
+                            "w07"= "adult",
+                            "w08"= "adult",
+                            "w09"= "adult",
+                            "w10"= "adult",
+                            "w11"= "adult",
+                            "w12"= "adult",
+                            "b07"= "adult",
+                            "b08"= "adult",
+                            "b09"= "adult",
+                            "b10"= "adult",
+                            "b11"= "adult",
+                            "b12"= "adult"))
 
 ####Exclusion 
 
-#non-white 
+#exclude non-white 
 d <- d %>%
   filter(Ethnicity == "Caucasian/White")
 
 length(unique(d$workerid))
 
-#participants with below 50% accuracy 
-assess_correct  <- d %>%
-  filter(responded==1) %>%
-  group_by(workerid) %>%
-  summarise(mean_correct = mean(correct))# %>%
-  filter(mean_correct < 0.5)
-
-#exclude participants with below 50% accuracy
-#d = d %>%
- #filter(workerid != "INCLUDE IDs HERE")
-
-#summarize error rate
+#participants with higher than 50% error 
 
   #reverse code accuracy in order to calculate % error 
      #new variable = 'error', levels: 1 = incorrect, 0 = correct 
 d$correct = as.factor(d$correct)
-d$error = fct_recode(d$correct,
-                   1 = 0,
-                   0 = 1)
+d$error= fct_recode(d$correct,
+                   "1" = "0",
+                   "0" = "1")
 
+d$error = as.character(d$error)
+d$error = as.numeric(d$error)
+
+assess_errorRate  <- d %>%
+  filter(responded==1) %>%
+  group_by(workerid) %>%
+  summarise(errorRate = (100*mean(error))) %>%
+  filter(errorRate < 50)
+
+
+#exclude participants with below 50% accuracy
+#d = d %>%
+ #filter(workerid != "INCLUDE IDs HERE")
+#NOT NECESSARY
 
 #exclude responded == 0
 d = d %>%
   filter(responded == 1)
 
-error <- d %>%
-  group_by(targetRace, workerid) %>%
-summarise(error_rate = mean(error))
-kable(error)
+unique(d$workerid)
 
-#print head 
-kable(head(d))
+```
+
+###Confirmatory analysis
+
+```{r analyses}
+# 2 x 2 x 2 anova
+aov1 <- ezANOVA(data = d, dv = error, wid = workerid,
+               within = .(word, targetRace, targetAge), detailed = T)
+
+#2 x 2 ANOVA
+aov2 <- ezANOVA(data = d, dv = error, wid = workerid,
+               within = .(word, targetRace), detailed = T)
+
+#calculate eta sq
+#part_eta <- SSn/(SSn + SSd)
+eta1 = 0.0168379763 / 0.05620882
+
+eta2 = 0.0098498233 / 0.027824162
+```
+
+```{r observed plots}
+sem <- function(x) {sd(x, na.rm=TRUE) / sqrt(sum(!is.na((x))))} #standard error of the mean 
+ci <- function(x) {sem(x) * 1.96}
 
 #prepare data for plotting
-  #this code is set up to output a graph for the interaction of time (pre and post) and condition (waitlist and class) on the dependent variable (YVAR) of your choice. To use just replace 'YVAR' with the name of your variable of interest. You should replace it 3 times. 
+ds <- d %>%
+  group_by(workerid, targetRace, word)  %>%
+  summarise(errorRate = 100*mean(error)) %>%
+  group_by(targetRace, word) %>%
+  summarise(errorRate_mean = mean(errorRate),
+            SD = sd(errorRate),
+            SE = se(errorRate),
+            N = length(errorRate),
+            ci = ci(errorRate))
 
-dv <- ddply(d, .(targetRace,word), summarise, accuracy = mean(accuracy, na.rm=TRUE)) #calculate mean Ys
-dvsd = ddply(d, .(targetRace,word), summarise, sdY = sd(accuracy,na.rm=TRUE)) #calculate sd
-dvl = ddply(d, .(targetRace,word), summarise, lY = length(accuracy)) #calculate 'n'
-dv$sdY = dvsd$sdY #add sd to dataframe
-dv$lY = dvl$lY #add N to dataframe
-dv$seY = dv$sdY/sqrt(dv$lY) #calculate standard error
-dv$upper = dv$accuracy + dv$seY #calculate +1 se interval upper limit
-dv$lower = dv$accuracy - dv$seY #calculate -1 se intervale lower limit
-#dv = dv[c(-3,-6),]
 
-#dv$word = factor(dv$word, labels = c("Safe","Threatening")) #Make sure X1 is a factor with interpretable labels
-```
-
-### Confirmatory analysis
-
-The analyses as specified in the analysis plan.  
-
-```{r}
-# 2 x 2 anova
-
-t1 <- aov(accuracy ~ targetRace * word, data=d)
-kable(summary(t1))
-
-#calculate replication error
-#t1_error = compareValues(reportedValue = , obtainedValue = )
-#t1_error 
-
-# calculate eta squared 
-etaSQ_t1 = eta_sq(t1)
-print(etaSQ_t1) 
-
-#calculate replication error
-#t1etaSQ_error = compareValues(reportedValue = , obtainedValue = )
-#t1etaSQ_error 
-```
-
-```{r}
 dodge <- position_dodge(width=0.8) 
-plot = ggplot(dv, aes(x = word, y = accuracy)) +
+plot1 = ggplot(ds, aes(x = word, y = errorRate_mean)) +
   geom_bar(stat="identity", width = .8, aes(fill=targetRace),position = "dodge") +
-  scale_fill_brewer(palette="Set1")  + #change colors of the bars
-  scale_y_continuous(limits=c(0,1)) + #this changes the Y axis, make sure to include 0
+  scale_fill_brewer(palette="Greys")  + #change colors of the bars
+  scale_y_continuous(limits=c(0,50)) + #this changes the Y axis, make sure to include 0
+  theme(axis.text.y = element_text(face="italic",size = rel(1.5),angle=90, hjust=1, vjust=.5)) + #changes y axis text
+  theme(axis.title.y=element_text(size=rel(1.5))) + #changes y axis text
+  theme_bw()+
+  ggtitle("Observed Data") + 
+  theme(panel.background = element_rect(fill="white",colour="white", size = rel(2)))+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),plot.title = element_text(hjust = 0.5), legend.position = "bottom") + 
+  labs(y = "Error Rate (%)") +
+  geom_errorbar(aes(ymin = errorRate_mean - ci, ymax = errorRate_mean + ci, fill=targetRace), position=dodge, width = 0.1)
+
+
+dodge <- position_dodge(width=0.8) 
+plot2 = ggplot(ds, aes(x = targetRace, y = errorRate_mean)) +
+  geom_bar(stat="identity", width = .8, aes(fill=word),position = "dodge") +
+  scale_fill_brewer(palette="Greys")  + #change colors of the bars
+  scale_y_continuous(limits=c(0,50)) + #this changes the Y axis, make sure to include 0
   theme(axis.text.y = element_text(face="italic",size = rel(1.5),angle=90, hjust=1, vjust=.5)) + #changes y axis text
   theme(axis.title.y=element_text(size=rel(1.5))) + #changes y axis text
   theme_bw()+ #gives it a nice clean theme (purely aesthetic)
-  geom_errorbar(aes(ymax=upper, ymin=lower, fill= targetRace),width=.25, position = dodge) #+ #adds error bars!
-  #theme(panel.background = element_rect(fill="white",colour="white", size = rel(2)))+theme(panel.border = element_blank()) #more aesthetic changes
+  ggtitle("Observed Data") + 
+  theme(panel.background = element_rect(fill="white",colour="white", size = rel(2)))+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), plot.title = element_text(hjust = 0.5), legend.position = "bottom") + 
+  labs(y = "Error Rate (%)") +
+  geom_errorbar(aes(ymin = errorRate_mean - ci, ymax = errorRate_mean + ci, fill=word), position=dodge, width = 0.1)
 
 ```
-
-
-```{r}
-print(plot)
-```
-
 
 ```{r Original Data }
 
 word = c('threatening', 'threatening', 'threatening', 'threatening', 'safe', 'safe', 'safe', 'safe')
 targetRace = c("Black", "White", "Black", "White", "Black", "White", "Black", "White")
-Age = c("child", "child", "adult", "adult", "child", "child", "adult", "adult")
-mean = c(32.0, 37.8, 28.9, 33.6, 31.9, 27.5, 33.9, 31.3)
-sd = c(15.5, 16.4, 15.7, 16.0, 13.0, 15.8, 17.9, 16.2)
+targetAge = c("child", "child", "adult", "adult", "child", "child", "adult", "adult")
+errorRate_mean = c(32.0, 37.8, 28.9, 33.6, 31.9, 27.5, 33.9, 31.3)
+SD = c(15.5, 16.4, 15.7, 16.0, 13.0, 15.8, 17.9, 16.2)
 
-o = data_frame(word, targetRace, Age, mean, sd)
+o = data_frame(targetRace, targetAge, word, errorRate_mean, SD)
 o$targetRace = as.factor(o$targetRace)
   
-dv <- ddply(o, .(targetRace,word), summarise, accuracy = mean(mean, na.rm=TRUE)) #calculate mean Ys
-dvsd = ddply(o, .(targetRace,word), summarise, sdY = sd(sd,na.rm=TRUE)) #calculate sd
-dvl = ddply(o, .(targetRace,word), summarise, lY = length(mean)) #calculate 'n'
-dv$sdY = dvsd$sdY #add sd to dataframe
-dv$lY = dvl$lY #add N to dataframe
-dv$seY = dv$sdY/sqrt(dv$lY) #calculate standard error
-dv$upper = dv$mean + dv$seY #calculate +1 se interval upper limit
-dv$lower = dv$mean - dv$seY #calculate -1 se intervale lower limit
+ds.o <- o %>%
+  group_by(targetRace, word)  %>%
+  summarise(errorRate_mean=mean(errorRate_mean)) 
+
+#create an empty graph with absolutely nothing :
+library(gridExtra)
+qplot(1:10, 1:10, geom = "blank") + theme_bw() + theme(line = element_blank(), text = element_blank()) +
+# Then I add my table :
+annotation_custom(grob = tableGrob(o))
+
 
 dodge <- position_dodge(width=0.8) 
-plot_o = ggplot(o, aes(x = word, y = mean)) +
+plot_o1 = ggplot(o, aes(x = word, y = errorRate_mean)) +
   geom_bar(stat="identity", width = .8, aes(fill=targetRace),position = "dodge") +
-  scale_fill_brewer(palette="Set1")  + #change colors of the bars
-  scale_y_continuous(limits=c(0,1)) + #this changes the Y axis, make sure to include 0
+  scale_fill_brewer(palette="Greys")  + #change colors of the bars
+  scale_y_continuous(limits=c(0,50)) + #this changes the Y axis, make sure to include 0
   theme(axis.text.y = element_text(face="italic",size = rel(1.5),angle=90, hjust=1, vjust=.5)) + #changes y axis text
   theme(axis.title.y=element_text(size=rel(1.5))) + #changes y axis text
-  theme_bw()+ #gives it a nice clean theme (purely aesthetic)
-  geom_errorbar(aes(ymax=upper, ymin=lower, fill= targetRace),width=.25, position = dodge) #+ #adds error bars!
-  #theme(panel.background = element_rect(fill="white",colour="white", size = rel(2)))+theme(panel.border = element_blank()) #more aesthetic changes
+    theme_bw()+
+  ggtitle("Original Data") +
+  theme(panel.background = element_rect(fill="white",colour="white", size = rel(2)))+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), plot.title = element_text(hjust = 0.5), legend.position="bottom") + 
+  labs(y = "Error Rate (%)")
+
+
+dodge <- position_dodge(width=0.8) 
+plot_o2 = ggplot(o, aes(x = targetRace, y = errorRate_mean)) +
+  geom_bar(stat="identity", width = .8, aes(fill=word),position = "dodge") +
+  scale_fill_brewer(palette="Greys")  + #change colors of the bars
+  scale_y_continuous(limits=c(0,50)) + #this changes the Y axis, make sure to include 0
+  theme(axis.text.y = element_text(face="italic",size = rel(1.5),angle=90, hjust=1, vjust=.5)) + #changes y axis text
+  theme(axis.title.y=element_text(size=rel(1.5))) + #changes y axis text
+    theme_bw()+
+  theme(panel.background = element_rect(fill="white",colour="white", size = rel(2)))+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),plot.title = element_text(hjust = 0.5), legend.position="bottom") + 
+  ggtitle("Original Data") + 
+  labs(y = "Error Rate (%)") 
 ```
 
+```{r  comparison plots}
+library(cowplot)
+c1 = plot_grid(plot_o1, plot1, labels = c("1A", "1B"), align = "h")
+
+c2 = plot_grid(plot_o2, plot2, labels = c("2A", "2B"), align = "h")
+```
+
+```{r comparison means tables}
+#original data summary
+o.ordered <- o[order(targetRace, targetAge, word, decreasing = c(FALSE, TRUE, FALSE), method="radix"),]
+
+library(gridExtra)
+table.or = qplot(1:10, 1:10, geom = "blank") + theme_bw() + theme(line = element_blank(), text = element_blank()) +
+# Then add my table :
+annotation_custom(grob = tableGrob(o.ordered))
+
+#observed data summary
+ds_sum <- d %>%
+  group_by(workerid, targetRace, targetAge, word)  %>%
+  summarise(errorRate = 100*mean(error)) %>%
+  group_by(targetRace, targetAge, word) %>%
+  summarise(errorRate_mean = mean(errorRate),
+            SD = sd(errorRate))
+
+
+table.ob = qplot(1:10, 1:10, geom = "blank") + theme_bw() + theme(line = element_blank(), text = element_blank()) +
+# Then add my table :
+annotation_custom(grob = tableGrob(ds_sum))
+
+```
+
+##Discussion 
+
+###Summary of Replication Attempt 
+The key result that we attempted to replicate was a Race of Prime × Target Word interaction: F(1, 61) = 32.30, p < .001, ηp2 = .35. A 2 (race of prime) x 2 (age of prime) x 2 (target word) repeated measures ANOVA revealed only a marginal Race of Prime x Target Word interaction: F(1, 13)=  3.89, p = .070, ηp2 = `r eta1` (see ANOVA table below). As in the original study, we found no interactions including Target Age. 
+```{r}
+kable(aov1)
+```
+
+As the original paper did not include a plot, we reconstructed a plot based on the original authors' means tables and juxtaposed our observed results. Plots and means indicate that our results revealed a trend in the expected direction (See Plots 1A and 1B and Means tables below; error bars on observed plot indicate 95% confidence intervals).
 
 ```{r}
-print(plot_o)
+print(c1)
 ```
+
+#####Original Means Table
+```{r}
+print(table.or)
+```
+
+#####Observed Means Table
+```{r}
+print(table.ob)
+```
+
+###Commentary 
+Overall, this is a marginal or partial replication, leaning more towards a failure. It is likely that the original study was overpowered and thus yielded significant results and a large effect size. Although our data did not reach a significant p-value, it is notable that the results showed a trend in the same direction with such a small sample size. 
+
+An interesting observation leads us to ask another question: If the effect of bias on error rate is true, then is a black-threat word or white-safe word bias driving the effect? If we consider the plot below, our data and the original data might tell a different story. In the original study, It appears that the interaction is driven by participants incorrectly labeling threatening words as safe following a White prime (this might indicate a White-safe bias). However, our data show the opposite trend. The marginal interaction appears to be driven by participants incorrectly labeling safe words as threatening following a Black prime (this might indicate a Black-threat bias). 
+```{r}
+print(c2)
+```
+
+I would be interested to further explore what mechanism may be driving differential error rates based on race of prime and words or objects. Even though we did not see our target interaction, the main question of whether cognitive biases linking Black men to threat extends to Black boys is not off the table. We did not see evidence that child primes attenuate any effects. Another replication should be done in the lab, where the original study took place, and perhaps with the original age range (college students). 
 
